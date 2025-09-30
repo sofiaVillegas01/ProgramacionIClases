@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Aplicacion {
     public static void main(String[] args) {
-        Zoologico zoo = new Zoologico("uq", "armenia", "456677");
+        Zoologico zoo = new Zoologico("uq", "armenia", "4560977");
 
         Gato gato1 = new Gato("lupe", "freishpudder", 7);
         Perro perro1 = new Perro("opoi", "koker", 6);
