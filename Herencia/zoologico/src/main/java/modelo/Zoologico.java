@@ -1,5 +1,5 @@
 package modelo;
-
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -57,7 +57,7 @@ public class Zoologico {
             listaAnimales.add(animal);
             resultado="este animal quedo registrado";
         }else{resultado="ya existe";
-        }return resultado;
+        } return resultado;
     }
     public Animal buscarAnimal(String nombre){
     for (Animal animal:listaAnimales){
@@ -81,11 +81,11 @@ public class Zoologico {
         Animal animal = null;
         animal = buscarAnimal(nombre);
 
-        System.out.println("Dame el nuevo nombre");
+        JOptionPane.showMessageDialog(null,"Dame el nuevo nombre");
         String nuevoNombre = scanner.nextLine();
-        System.out.println("Dame el nuevo tipo");
+        JOptionPane.showMessageDialog(null,"Dame el nuevo tipo");
         String nuevoTipo = scanner.nextLine();
-        System.out.println("Dame el nuevo id");
+        JOptionPane.showMessageDialog(null,"Dame el nuevo id");
         int nuevoId = scanner.nextInt();
         animal.setNombre(nuevoNombre);
     }

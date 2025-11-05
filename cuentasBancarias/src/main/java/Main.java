@@ -6,10 +6,9 @@ public class Main {
         ca.extractoMensual();
         ca.imprimir();
 
-        System.out.println("------------");
 
 
-        CuentaCorriente cc = new CuentaCorriente(5000, 0.12f);
+        CuentaCorriente cc = new CuentaCorriente(3000, 0.12f);
         cc.retirar(7000);
         cc.consignar(3000);
         cc.extractoMensual();

@@ -13,6 +13,46 @@ public abstract class  Cuenta {
         this.tasaAnual = tasaAnual;
     }
 
+    public float getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getNumConsignaciones() {
+        return numConsignaciones;
+    }
+
+    public void setNumConsignaciones(int numConsignaciones) {
+        this.numConsignaciones = numConsignaciones;
+    }
+
+    public float getTasaAnual() {
+        return tasaAnual;
+    }
+
+    public void setTasaAnual(float tasaAnual) {
+        this.tasaAnual = tasaAnual;
+    }
+
+    public int getNumRetiros() {
+        return numRetiros;
+    }
+
+    public void setNumRetiros(int numRetiros) {
+        this.numRetiros = numRetiros;
+    }
+
+    public float getComisionMensual() {
+        return comisionMensual;
+    }
+
+    public void setComisionMensual(float comisionMensual) {
+        this.comisionMensual = comisionMensual;
+    }
+
     public void consignar(float cantidad) {
         if (cantidad <= 0) {
             JOption("La cantidad debe ser mayor a 0");
@@ -33,7 +73,7 @@ public abstract class  Cuenta {
     }
 
     public float calcularInteresMensual() {
-        float tasaMensual = tasaAnual / 12;
+        float tasaMensual = (tasaAnual / 12)/100;
         return saldo * tasaMensual;
     }
 

@@ -10,6 +10,6 @@ public class Delfin extends Animal {
 
         @Override
         public void hacerSonido(){
-            System.out.println("el delfincito dice: mmmm");
+            JOptionPane.showMessageDialog(null,"el delfincito dice: mmmm");
         }
     }

@@ -9,6 +9,6 @@ public class Loro extends Animal {
 
     @Override
     public void hacerSonido(){
-        System.out.println("el lorito dice: quiere almendras");
+        JOptionPane.showMessageDialog(null,"el lorito dice: quiere almendras");
     }
 }

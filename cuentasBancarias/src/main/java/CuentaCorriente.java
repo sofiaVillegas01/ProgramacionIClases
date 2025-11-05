@@ -5,6 +5,13 @@ public class CuentaCorriente extends Cuenta {
         super(saldo, tasaAnual);
         this.sobregiro = 0;
     }
+    public float getSobregiro() {
+        return sobregiro;
+    }
+
+    public void setSobregiro(float sobregiro) {
+        this.sobregiro = sobregiro;
+    }
 
     @Override
     public void retirar(float cantidad) {
@@ -41,13 +48,5 @@ public class CuentaCorriente extends Cuenta {
     public void imprimir() {
         super.imprimir();
         System.out.println("Sobregiro: " + sobregiro);
-    }
-
-    public float getSobregiro() {
-        return sobregiro;
-    }
-
-    public void setSobregiro(float sobregiro) {
-        this.sobregiro = sobregiro;
     }
 }

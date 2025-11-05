@@ -11,7 +11,7 @@ public class Veterinaria20 {
             this.citas = new ArrayList<>();
         }
 
-        public void registrarCita(Cita cita) {
+    public void registrarCita(Cita cita) {
             citas.add(cita);
             System.out.println("✅ Cita registrada exitosamente.");
         }

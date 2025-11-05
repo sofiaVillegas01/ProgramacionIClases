@@ -10,7 +10,7 @@ public class Perro extends Animal {
 
     @Override
     public void hacerSonido() {
-        System.out.println("el perrito dice: guau");
+        JOptionPane.showMessageDialog(null,"el perrito dice: guau");
     }
 }
 

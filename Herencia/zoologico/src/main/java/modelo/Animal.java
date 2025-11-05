@@ -2,10 +2,6 @@ package modelo;
 
 public abstract class Animal {
 private String nombre;
-
-
-
-
     public Animal(String nombre, String tipo, int id) {
         this.nombre = nombre;
     }

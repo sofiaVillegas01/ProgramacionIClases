@@ -7,6 +7,7 @@ public class CuentaAhorros extends Cuenta {
     }
 
     private void actualizarEstado() {
+
         isActiva = saldo >= 10000;
     }
 

@@ -11,7 +11,7 @@ public class Gato extends Animal {
 
     @Override
     public void hacerSonido() {
-        System.out.println("el gatito dice: miau");
+        JOptionPane.showMessageDialog(null,"el gatito dice: miau");
     }
 }
 

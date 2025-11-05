@@ -10,6 +10,6 @@ public class Rana extends Animal {
 
     @Override
     public void hacerSonido() {
-        System.out.println("la ranita dice: ruanakkkk");
+        JOptionPane.showMessageDialog(null,"la ranita dice: ruanakkkk");
     }
 }
