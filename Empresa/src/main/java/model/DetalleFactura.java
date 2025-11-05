@@ -7,7 +7,7 @@ import java.util.List;
 public class DetalleFactura {
 private Producto producto;
 private int cantidad;
-private List<Factura> listaFacturas;
+
 
     public DetalleFactura(Producto producto, int cantidad) {
         if(cantidad <= 0 || producto == null){
@@ -15,15 +15,7 @@ private List<Factura> listaFacturas;
         }
         this.producto = producto;
         this.cantidad = cantidad;
-        this.listaFacturas = new LinkedList<>();
-    }
 
-    public List<Factura> getListaFacturas() {
-        return listaFacturas;
-    }
-
-    public void setListaFacturas(List<Factura> listaFacturas) {
-        this.listaFacturas = listaFacturas;
     }
 
     public Producto getProducto() {
@@ -45,11 +37,8 @@ private List<Factura> listaFacturas;
     public double calcularSubtotal() {
         return producto.getPrecioUnitario() * cantidad;
     }
-
     @Override
     public String toString() {
-        return "DetalleFactura [producto=" + producto + ", cantidad=" + cantidad + ", subtotal=" + calcularSubtotal() + "]";
+        return producto.getNombre() + " x" + cantidad + " = $" + calcularSubtotal();
     }
-
-
 }

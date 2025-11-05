@@ -1,54 +1,57 @@
 package model;
 
-import java.time.LocalDate;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Factura {
-   private int codigo;
-    private LocalDate fecha;
+    private int numero;
+    private Date fecha;
     private Cliente cliente;
-    private List<DetalleFactura>listaDetalles;
+    private ArrayList<DetalleFactura> detalles;
 
-
-    public Factura(int codigo, LocalDate fecha, Cliente cliente) {
-      if(codigo <= 0 || fecha == null || cliente == null){
-            throw new IllegalArgumentException("Número de factura debe ser positivo, fecha no puede ser nula, total no puede ser negativo y cliente no puede ser nulo");
-        }
-      this.codigo = codigo;
-      this.fecha = fecha;
-      this.cliente = cliente;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
+    public Factura(int numero, Date fecha, Cliente cliente) {
+        this.numero = numero;
         this.fecha = fecha;
+        this.cliente = cliente;
+        this.detalles = new ArrayList<>();
     }
 
-    @Override
-    public String toString() {
-        return "Factura{" +
-                "fecha=" + fecha +
-                ", codigo=" + codigo +
-                '}';
+    public void agregarDetalle(Producto producto, int cantidad) {
+        detalles.add(new DetalleFactura(producto, cantidad));
     }
-    public double calcularSubTotal(){
-        double subtotal=0;
-        for(DetalleFactura detalle:listaDetalles){
-            subtotal +=detalle.getProducto().getPrecioUnitario()*detalle.getCantidad();
+
+    public double calcularTotal() {
+        double subtotal = 0;
+        for (DetalleFactura d : detalles) {
+            subtotal += d.calcularSubtotal();
         }
-        return subtotal;
+        double descuento = cliente.calcularDescuento(subtotal);
+        return subtotal - descuento;
     }
+
+    public void mostrarFactura() {
+        System.out.println("Factura #" + numero);
+        System.out.println("Fecha: " + fecha);
+        System.out.println("Cliente: " + cliente.getNombre());
+        System.out.println("Detalles:");
+        for (DetalleFactura d : detalles) {
+            System.out.println("- " + d);
+        }
+        System.out.println("Total a pagar: $" + calcularTotal());
+    }
+    public String generarResumen() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Factura #").append(numero).append("\n");
+        sb.append("Fecha: ").append(fecha).append("\n");
+        sb.append("Cliente: ").append(cliente.getNombre()).append("\n");
+        sb.append("Detalles:\n");
+        for (DetalleFactura d : detalles) {
+            sb.append("- ").append(d.getProducto().getNombre())
+                    .append(" x").append(d.getCantidad())
+                    .append(" = $").append(d.calcularSubtotal()).append("\n");
+        }
+        sb.append("Total a pagar: $").append(calcularTotal()).append("\n");
+        return sb.toString();
+    }
+
 }
-
-

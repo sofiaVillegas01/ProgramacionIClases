@@ -1,13 +1,11 @@
 package model;
 
-import java.util.List;
-
 public class ClienteCorporativo extends Cliente {
     private String nit;
     private double descuento;
 
-    public ClienteCorporativo(String nombre, String cedula, String direccion, List<Producto> listaProductos, List<Factura> listaFacturas, String nit, double descuento) {
-        super(nombre, cedula, direccion, listaProductos, listaFacturas);
+    public ClienteCorporativo(String nombre, String cedula, String direccion, String nit, double descuento) {
+        super(nombre, cedula, direccion);
         if(nombre==null || nombre.isEmpty()||cedula==null ||cedula.isEmpty()||direccion==null || direccion.isEmpty() || nit==null || nit.isEmpty() || descuento<0){
             throw new IllegalArgumentException("Datos invalidos,sea correct@,lea bien");
         }
@@ -31,8 +29,8 @@ public class ClienteCorporativo extends Cliente {
         this.descuento = descuento;
     }
 
-   @Override
-    public double descuento(){
-        return descuento;
-   }
+    @Override
+    public double calcularDescuento(double total) {
+        return total * (descuento / 100);
+    }
 }
