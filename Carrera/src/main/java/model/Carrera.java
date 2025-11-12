@@ -13,7 +13,7 @@ public record Carrera(String nombre, ArrayList<Estudiante> listaEstudiantes, Arr
         Materia materia = new Teorica(  codigo, nombre,numerodehoraSemana, (byte)cantidadCreditos, semestres);
         listaMaterias.add(materia);
     }
-    public void registrarMateriaPractica(String codigo, String nombre, int numerodehoraSemana, int horasPractica,int cantidadCreditos, int semestre, int numeroLaboratorios) {
+    public void registrarPractica(String codigo, String nombre, int numerodehoraSemana, int horasPractica,int cantidadCreditos, int semestre, int numeroLaboratorios) {
         Practica materia = new Practica(codigo, nombre, numerodehoraSemana, horasPractica,(byte)cantidadCreditos, semestre, numeroLaboratorios);
         listaMaterias.add(materia);
     }

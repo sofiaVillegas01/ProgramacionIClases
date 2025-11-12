@@ -15,7 +15,7 @@ public static void main(String[] args) {
                 carrera.registrarMateriaTeorica("76", "Inglés", 32, 4, (byte) 2);
                 JOptionPane.showMessageDialog(null, "Materia Teórica registrada:\nCódigo: 76\nNombre: Inglés\nHoras/Semana: 32\nCréditos: 4\nSemestre: 2");
 
-                carrera.registrarMateriaPractica("56", "Ciencias", 20, 3, 2, 3, 2);
+                carrera.registrarPractica("56", "Ciencias", 20, 3, 2, 3, 2);
                 JOptionPane.showMessageDialog(null, "Materia Práctica registrada:\nCódigo: 56\nNombre: Ciencias\nHoras/Semana: 20\nHoras Práctica: 3\nCréditos: 2\nSemestre: 3\nLaboratorios: 2");
 
                 // Profesores
